@@ -18,6 +18,18 @@ An interactive R Shiny dashboard analyzing workplace climate across a Tier-1 Glo
 | **Stack** | Python · R · Shiny · bslib · plotly · DT |
 | **Tabs** | Overview · Climate Indicators · Department Analysis · Regional View · Workforce Profile · Open Comments · Americas Map |
 
+### 2 — Americas Health Core Indicators 2025
+> `Americas Health Indicator/`
+
+An interactive R Shiny dashboard exploring PAHO's Core Health Indicators across 49 countries and territories in the Americas, covering demography, mortality, maternal & child health, communicable diseases, NCD risk factors, and health systems.
+
+| | |
+|---|---|
+| **Live app** | [ezequielbassa.shinyapps.io/3Epidemiology](https://ezequielbassa.shinyapps.io/3Epidemiology/) |
+| **Dataset** | PAHO/EIH Open Data — Core Indicators 2025 · 49 countries/territories |
+| **Stack** | R · Shiny · bslib · shinyWidgets · plotly · DT |
+| **Tabs** | Overview · Trend Explorer · Country Profile · Disease Burden · Maternal & Child · Health System |
+
 ---
 
 ## Tech Stack
