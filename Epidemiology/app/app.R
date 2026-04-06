@@ -21,13 +21,19 @@ library(glue)
 # ── 1. DATA ────────────────────────────────────────────────────────────────────
 if (!file.exists("paho_clean.rds")) {
   df_raw <- read.csv(
-    "PAHO-Core-Indicators-2025-20251001.csv",
+    "../sources/PAHO-Core-Indicators-2025-20251001.csv",
     stringsAsFactors = FALSE,
     na.strings        = c("", "NULL", "NA"),
     fileEncoding      = "UTF-8-BOM"
   )
   df_raw$numeric_value <- suppressWarnings(as.numeric(df_raw$numeric_value))
   df_raw$time_dim      <- suppressWarnings(as.integer(df_raw$time_dim))
+  # Indicators where negative values are valid (economic / demographic)
+  allowed_negative <- c(
+    "Annual GDP growth (%)",
+    "Annual population growth rate (%)",
+    "Inflation (%)"
+  )
   df_clean <- df_raw |>
     filter(!is.na(numeric_value), !is.na(time_dim)) |>
     select(
@@ -38,7 +44,12 @@ if (!file.exists("paho_clean.rds")) {
       year           = time_dim,
       value          = numeric_value
     ) |>
-    mutate(country = trimws(country))
+    mutate(
+      country = trimws(country),
+      # Negative coverage/rate values are PAHO encoding for suppressed data → treat as NA
+      value   = ifelse(value < 0 & !indicator %in% allowed_negative, NA_real_, value)
+    ) |>
+    filter(!is.na(value))
   saveRDS(df_clean, "paho_clean.rds")
 }
 

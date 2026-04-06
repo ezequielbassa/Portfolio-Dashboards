@@ -1,0 +1,22 @@
+# Deployment metadata
+rsconnect/
+**/rsconnect/
+
+# Large raw data files
+*.csv:Zone.Identifier
+PAHO-Core-Indicators-2025-20251001.csv
+
+# R session files
+.RData
+.Rhistory
+.Rproj.user/
+
+# Python virtual environment
+.venv/
+__pycache__/
+
+# QA log and profvis (generated, large or noisy)
+qa_log.txt
+profvis_reactive.html
+profvis_reactive_files/
+Portfolio-Dashboards/
