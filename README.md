@@ -19,7 +19,7 @@ An interactive R Shiny dashboard analyzing workplace climate across a Tier-1 Glo
 | **Tabs** | Overview · Climate Indicators · Department Analysis · Regional View · Workforce Profile · Open Comments · Americas Map |
 
 ### 2 — Americas Health Core Indicators 2025
-> `Americas Health Indicator/`
+> `Epidemiology/`
 
 An interactive R Shiny dashboard exploring PAHO's Core Health Indicators across 49 countries and territories in the Americas, covering demography, mortality, maternal & child health, communicable diseases, NCD risk factors, and health systems.
 
