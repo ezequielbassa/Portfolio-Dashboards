@@ -20,3 +20,6 @@ qa_log.txt
 profvis_reactive.html
 profvis_reactive_files/
 Portfolio-Dashboards/
+
+# Portfolio copy files — personal use only, never push
+**/content/
